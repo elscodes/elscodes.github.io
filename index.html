@@ -147,6 +147,39 @@
 				</div>
 			</div>
 
+			<section id="my-gears">
+				<div class="container">
+					<div class="row text-center mb-3">
+						<div class="col">
+							<h2>My Gear</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-lg-4 mb-3">
+							<div class="gear-box">
+								<h4 class="gear-name">iMac Pro</h4>
+								<img src="img/My Gadget/2.png" alt="iMac Pro" class="gear-img" />
+								<a href="#" class="btn btn-light gear-detail-button">Show Details</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4 mb-3">
+							<div class="gear-box">
+								<h4 class="gear-name">Sony A7 II</h4>
+								<img src="img/My Gadget/1.png" alt="Sony A7 II" class="gear-img" />
+								<a href="#" class="btn btn-light gear-detail-button">Show Details</a>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-4 mb-3">
+							<div class="gear-box">
+								<h4 class="gear-name">Macbook Pro</h4>
+								<img src="img/My Gadget/3.png" alt="Macbook Pro M1" class="gear-img" />
+								<a href="#" class="btn btn-light gear-detail-button">Show Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 				<path
 					fill="#ffffff"
@@ -156,70 +189,6 @@
 			</svg>
 		</section>
 		<!-- Akhir Workspace Setup -->
-
-		<!-- Gallery -->
-		<section id="gallery">
-			<div class="container">
-				<div class="row text-center mb-3">
-					<div class="col">
-						<h2>Gallery</h2>
-					</div>
-				</div>
-				<div class="row justify-content-center">
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/1.jpg" alt="Gambar 1" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/2.jpg" alt="Gambar 2" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/3.jpg" alt="Gambar 3" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/4.jpg" alt="Gambar 4" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/5.jpg" alt="Gambar 5" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/6.jpg" alt="Gambar 6" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/7.jpg" alt="Gambar 7" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/8.jpg" alt="Gambar 8" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/9.jpg" alt="Gambar 9" class="img-fluid gallery-img" />
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">
-							<img src="img/thumb/10.jpg" alt="Gambar 10" class="img-fluid gallery-img" />
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- Akhir Gallery -->
 
 		<!-- Contact -->
 		<section id="contact">
@@ -278,14 +247,6 @@
 
 		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 		<script>
-			const galleryImage = document.querySelectorAll('.gallery-img');
-
-			galleryImage.forEach((img, i) => {
-				img.dataset.aos = 'fade-down';
-				img.dataset.aosDelay = i * 100;
-				img.dataset.duration = 1000;
-			});
-
 			AOS.init({
 				once: true,
 				duration: 2000,
@@ -296,8 +257,8 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/TextPlugin.min.js"></script>
 		<script>
 			gsap.registerPlugin(TextPlugin);
-			gsap.to('.lead', { duration: 2, delay: 1.5, text: 'Freelance | Students' });
-			gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0 });
+			gsap.to('.lead', { duration: 1.5, delay: 1.5, text: 'Freelance | Students' });
+			gsap.from('.jumbotron img', { duration: 2, rotateX: 360, opacity: 0 });
 			gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce' });
 			gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
 		</script>
@@ -327,6 +288,14 @@
 						console.log('Success!', response);
 					})
 					.catch((error) => console.error('Error!', error.message));
+			});
+		</script>
+		<script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+		<script type="text/javascript">
+			VanillaTilt.init(document.querySelectorAll('.gear-box'), {
+				max: 35,
+				speed: 600,
+				glare: true,
 			});
 		</script>
 	</body>
